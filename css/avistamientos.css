@@ -1,0 +1,47 @@
+html{
+    height: 100%;  /*asigna lao que ocupa el html*/}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url();
+    background: linear-gradient( rgb(211, 208, 207), rgb(255, 255, 255));
+}
+.btn1 button{
+    margin: 0 0 30px;
+    position: relative;
+    display: inline-block;
+    padding: 7px 14px;
+    background: #7c260c;
+    color: #ffff;
+    font-size: 20px;
+    overflow: hidden;
+    transition: 1s;
+    margin-top: 40px;
+    letter-spacing: 2.5px;
+    border-radius: 5px;
+    margin: 10px;
+    border: 0;
+    overflow: auto;
+}
+.btn1 button:hover{
+    background: rgb(255, 166, 0);
+    color:rgb(0, 0, 0);
+    box-shadow: 0 0 5px rgb(255, 166, 0), 0 0 25px  rgb(255, 166, 0), 0 0 50px  rgb(255, 166, 0), 0 0 100px  rgb(255, 166, 0),  0 0 150px  rgb(255, 166, 0);
+}
+.cabecera{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;         
+    padding: 5px 10px;             
+    background-color: #f5f5f5;      
+    border-bottom: 1px solid #6e6e6e;
+}
+.titulo1 h1 a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif, Arial;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2b2d42;
+    letter-spacing: -1px;
+}
