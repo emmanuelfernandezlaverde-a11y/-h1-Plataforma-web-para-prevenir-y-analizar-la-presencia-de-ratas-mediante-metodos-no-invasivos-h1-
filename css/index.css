@@ -1,12 +1,15 @@
-html{
-    height: 100%;  /*asigna lao que ocupa el html*/}
-body{
+html {
+    height: 100%;
+}
+
+body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background: linear-gradient( rgb(211, 208, 207), rgb(255, 255, 255));
+    background: linear-gradient(rgb(211, 208, 207), rgb(255, 255, 255));
 }
-.btn1 button{
+
+.btn1 button {
     margin: 0 0 30px;
     position: relative;
     display: inline-block;
@@ -23,46 +26,49 @@ body{
     border: 0;
     overflow: auto;
 }
-.btn1 button:hover{
+
+.btn1 button:hover {
     background: rgb(255, 166, 0);
-    color:rgb(0, 0, 0);
-    box-shadow: 0 0 5px rgb(255, 166, 0), 0 0 25px  rgb(255, 166, 0), 0 0 50px  rgb(255, 166, 0), 0 0 100px  rgb(255, 166, 0),  0 0 150px  rgb(255, 166, 0);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 5px rgb(255, 166, 0), 0 0 25px rgb(255, 166, 0), 0 0 50px rgb(255, 166, 0), 0 0 100px rgb(255, 166, 0), 0 0 150px rgb(255, 166, 0);
 }
-.cabecera{
+
+.cabecera {
     display: flex;
     justify-content: space-between;
-    align-items: center;         
-    padding: 5px 10px;             
-    background-color: #f5f5f5;      
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #f5f5f5;
     border-bottom: 1px solid #6e6e6e;
 }
+
 .titulo1 h1 a {
     text-decoration: none;
     font-family: 'Poppins', sans-serif, Arial;
-    font-size: 130%;
+    font-size: 2.8rem;
     font-weight: 700;
     color: #2b2d42;
     letter-spacing: -1px;
 }
-.contenedor-info { /*Como poner un texto en algun lateral de la pagina*/
+
+.contenedor-info {
     display: flex;
-    align-items: center;       /* Centra el texto verticalmente respecto a la imagen */
-    gap: 40px;                 /* Espacio de separación entre la imagen y el texto */
-    max-width: 1000px;         /* Ancho máximo del bloque */
-    margin: 50px auto;         /* Margen superior/inferior y centrado automático */
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 50px auto;
     padding: 0 20px;
-    text-align: left;          /* Alinea el texto a la izquierda para una mejor lectura */
+    text-align: left;
 }
 
-/* Estilo y tamaño de la imagen */
 .imagen-lateral {
-    width: 350px;              /* Ajusta el ancho de la imagen a tu gusto */
-    height: auto;              /* Mantiene las proporciones originales */
-    border-radius: 12px;       /* Bordes redondeados modernos */
+    width: 350px;
+    height: auto;
+    border-radius: 12px;
     object-fit: cover;
 }
 
-/* Estilos para el bloque de texto */
+
 .texto-lateral h3 {
     margin-top: 0;
     color: #2b2d42;
@@ -74,17 +80,20 @@ body{
     line-height: 1.6;
     font-size: 1.05rem;
 }
+
 .imagen-lateral2 {
-    width: 350px;              /* Ajusta el ancho de la imagen a tu gusto */
-    height: auto;              /* Mantiene las proporciones originales */
-    border-radius: 12px;       /* Bordes redondeados modernos */
+    width: 350px;
+    height: auto;
+    border-radius: 12px;
     object-fit: cover;
 }
+
 .texto-lateral2 h3 {
     margin-top: 0;
     color: #2b2d42;
     font-size: 2rem;
 }
+
 .texto-lateral2 p {
     color: #555555;
     line-height: 1.6;
