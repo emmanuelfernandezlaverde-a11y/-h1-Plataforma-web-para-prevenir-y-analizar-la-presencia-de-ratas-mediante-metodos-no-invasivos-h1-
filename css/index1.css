@@ -1,0 +1,751 @@
+/* ==========================================================================
+   1. VARIABLES DE ESTILO
+   ========================================================================== */
+:root {
+    --bg-principal: #120802;
+    --color-naranja: #ea580c;
+    --color-naranja-claro: #f97316;
+    --color-dorado: #fbbf24;
+    --color-texto: #f1f5f9;
+    --color-texto-suave: rgba(254, 215, 170, 0.7);
+    --color-borde: rgba(255, 180, 120, 0.12);
+    --color-tarjeta: rgba(26, 12, 3, 0.65);
+    --radio-estandar: 14px;
+    --transicion: all 0.2s ease;
+}
+
+/* ==========================================================================
+   2. REINICIO Y FONDO
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--color-texto);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #120802;
+    background-image:
+        radial-gradient(circle at 15% 15%, rgba(249,115,22,.18), transparent 45%),
+        radial-gradient(circle at 85% 25%, rgba(234,88,12,.12), transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(194,65,12,.15), transparent 50%),
+        radial-gradient(circle at 90% 90%, rgba(245,158,11,.1), transparent 35%);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+body:before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-size: 32px 32px;
+    background-image:
+        linear-gradient(to right, rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.03) 1px, transparent 1px);
+}
+
+.glow {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+.glow.one {
+    top: 5rem;
+    left: 25%;
+    width: 24rem;
+    height: 24rem;
+    background: rgba(234,88,12,.12);
+    filter: blur(100px);
+}
+.glow.two {
+    bottom: 2.5rem;
+    right: 25%;
+    width: 28rem;
+    height: 28rem;
+    background: rgba(217,119,6,.08);
+    filter: blur(120px);
+}
+
+.header-inner, .footer-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   3. CABECERA
+   ========================================================================== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    width: 100%;
+    background: rgba(18, 8, 2, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.header-inner {
+    height: 70px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+}
+
+.logo-badge {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(234, 88, 12, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    display: grid;
+    place-items: center;
+    color: #fb923c;
+    font-size: 16px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+}
+
+.brand-sub {
+    font-size: 11px;
+    color: var(--color-texto-suave);
+    letter-spacing: 0.02em;
+}
+
+/* Navegación */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+nav a {
+    color: rgba(254, 215, 170, 0.75);
+    text-decoration: none;
+    padding: 8px 14px;
+    font-size: 13.5px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: var(--transicion);
+}
+
+nav a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+nav a.active {
+    color: #ffffff;
+    background: rgba(234, 88, 12, 0.15);
+}
+
+.nav-sep {
+    width: 1px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 4px;
+}
+
+.btn-nav-action {
+    background: rgba(234, 88, 12, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+    color: #fdba74 !important;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.btn-nav-action:hover {
+    background: rgba(234, 88, 12, 0.28);
+    border-color: rgba(249, 115, 22, 0.55);
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   4. BOTÓN HAMBURGUESA (oculto en escritorio)
+   ========================================================================== */
+.menu-toggle {
+    display: none;
+    background: rgba(234, 88, 12, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+    color: #fdba74;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transicion);
+}
+
+.menu-toggle:hover {
+    background: rgba(234, 88, 12, 0.28);
+    color: #ffffff;
+}
+
+.menu-toggle .menu-icon,
+.menu-toggle .close-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   5. CONTENIDO PRINCIPAL
+   ========================================================================== */
+main {
+    position: relative;
+    z-index: 10;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+    width: 100%;
+}
+
+.hero {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 36px;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(234, 88, 12, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    color: #fdba74;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.pill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-dorado);
+}
+
+h1, h2, h3 {
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+}
+
+.hero h1 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 14px 0 10px;
+    color: #ffffff;
+}
+
+.hero h1 span {
+    color: #fb923c;
+}
+
+.hero p {
+    color: var(--color-texto-suave);
+    font-size: 15px;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* ==========================================================================
+   6. LAYOUT EN 2 COLUMNAS
+   ========================================================================== */
+.layout {
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+.card-clean {
+    background: var(--color-tarjeta);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-estandar);
+    padding: 24px;
+}
+
+.sidebar-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sidebar-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: rgba(234, 88, 12, 0.15);
+    color: #fb923c;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.sidebar-title h2 {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.sidebar-info p {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--color-texto-suave);
+    margin: 0;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 12px 0 0;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-list li {
+    font-size: 12.5px;
+    color: rgba(241, 245, 249, 0.85);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.4;
+}
+
+.sidebar-list .bullet {
+    color: #34d399;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   7. FORMULARIO
+   ========================================================================== */
+.form-card {
+    padding: 28px;
+    background: rgba(28, 13, 3, 0.7);
+    border: 1px solid rgba(255, 180, 120, 0.15);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(254, 215, 170, 0.85);
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+}
+
+label .required {
+    color: #f97316;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: rgba(14, 6, 1, 0.65);
+    border: 1px solid rgba(255, 180, 120, 0.16);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 13.5px;
+    outline: none;
+    transition: var(--transicion);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #ea580c;
+    background: rgba(20, 9, 2, 0.85);
+    box-shadow: 0 0 0 2px rgba(234, 88, 12, 0.2);
+}
+
+select option {
+    background: #1c0d03;
+    color: #ffffff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.field-hint {
+    font-size: 11px;
+    color: rgba(254, 215, 170, 0.45);
+    margin-top: 5px;
+    display: block;
+}
+
+/* ==========================================================================
+   8. CHIPS DE CONDICIONES
+   ========================================================================== */
+.conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.chip-option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(45, 16, 4, 0.35);
+    border: 1px solid rgba(255, 180, 120, 0.12);
+    cursor: pointer;
+    transition: var(--transicion);
+    user-select: none;
+}
+
+.chip-option:hover {
+    background: rgba(60, 22, 6, 0.45);
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+.chip-option input[type="checkbox"] {
+    accent-color: #ea580c;
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.chip-text {
+    font-size: 12.5px;
+    color: rgba(241, 245, 249, 0.9);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ==========================================================================
+   9. ZONA DE FOTO
+   ========================================================================== */
+.photo-box {
+    position: relative;
+    border: 1.5px dashed rgba(249, 115, 22, 0.25);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    background: rgba(30, 11, 2, 0.25);
+    transition: var(--transicion);
+    cursor: pointer;
+}
+
+.photo-box:hover {
+    border-color: rgba(249, 115, 22, 0.5);
+    background: rgba(45, 16, 4, 0.3);
+}
+
+.photo-box input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.photo-box p {
+    margin: 0;
+    font-size: 13px;
+    color: #fed7aa;
+}
+
+.photo-box small {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    color: rgba(253, 186, 116, 0.5);
+}
+
+/* ==========================================================================
+   10. BOTÓN PRINCIPAL
+   ========================================================================== */
+.btn-submit {
+    width: 100%;
+    padding: 13px 20px;
+    border-radius: 10px;
+    border: none;
+    background: #ea580c;
+    color: #ffffff;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--transicion);
+    box-shadow: 0 2px 10px rgba(234, 88, 12, 0.25);
+}
+
+.btn-submit:hover {
+    background: #f97316;
+    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+    transform: translateY(-1px);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   11. ALERTA DE ÉXITO
+   ========================================================================== */
+.alert-success {
+    margin-top: 18px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: rgba(6, 78, 59, 0.65);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: #a7f3d0;
+    font-size: 13px;
+    line-height: 1.45;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.alert-success strong {
+    display: block;
+    color: #ffffff;
+    margin-bottom: 2px;
+    font-size: 13.5px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ==========================================================================
+   12. PASOS EXPLICATIVOS
+   ========================================================================== */
+.steps-section {
+    margin-top: 56px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255, 180, 120, 0.1);
+}
+
+.steps-heading {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.steps-heading span {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--color-dorado);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.steps-heading h2 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-top: 4px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.step-card {
+    padding: 20px;
+    background: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+}
+
+.step-badge {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: rgba(234, 88, 12, 0.2);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    color: #fcd34d;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.step-card h3 {
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.step-card p {
+    font-size: 12.5px;
+    color: var(--color-texto-suave);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ==========================================================================
+   13. PIE DE PÁGINA
+   ========================================================================== */
+footer {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 180, 120, 0.08);
+    padding: 20px 24px;
+    color: rgba(254, 215, 170, 0.45);
+    font-size: 12px;
+    background: rgba(14, 6, 1, 0.85);
+    position: relative;
+    z-index: 10;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* ==========================================================================
+   14. RESPONSIVE (MÓVILES Y PANTALLAS PEQUEÑAS)
+   ========================================================================== */
+@media (max-width: 820px) {
+    /* --- Layout general --- */
+    .layout {
+        grid-template-columns: 1fr;
+    }
+    .form-row,
+    .conditions-grid,
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 30px;
+    }
+    .form-card {
+        padding: 20px;
+    }
+    main {
+        padding: 32px 18px 48px;
+    }
+
+    /* --- Menú hamburguesa --- */
+    .menu-toggle {
+        display: inline-flex;
+    }
+
+    header nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 12px 16px 16px;
+        background: rgba(18, 8, 2, 0.98);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--color-borde);
+        transform: translateY(-12px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        z-index: 39;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    header nav.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    header nav a {
+        display: block;
+        width: 100%;
+        padding: 12px 14px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    header nav .nav-sep {
+        display: none;
+    }
+
+    header nav .btn-nav-action {
+        text-align: center;
+        margin-top: 6px;
+    }
+}

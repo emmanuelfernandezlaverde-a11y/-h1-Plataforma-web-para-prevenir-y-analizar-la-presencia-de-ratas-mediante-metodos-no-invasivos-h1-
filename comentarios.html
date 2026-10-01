@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnView - Comentarios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/comentarios.css">
+</head>
+<body>
+
+<!-- Iluminación de fondo atmosférica -->
+<div class="glow one"></div>
+<div class="glow two"></div>
+
+<!-- ==========================================================================
+     CABECERA SUPERIOR
+     ========================================================================== -->
+<header>
+    <div class="header-inner">
+        <a href="index1.html" class="brand">
+            <div class="logo-badge">◉</div>
+            <div class="brand-text">
+                <span class="brand-title">OnView</span>
+                <span class="brand-sub">I.E. San Antonio de Prado • Grado 10°</span>
+            </div>
+        </a>
+
+        <nav>
+          
+            <a href="comentarios.html" class="active">Comentarios</a>
+            <a href="reportes.html">Reportes</a>
+            <span class="nav-sep"></span>
+            <a href="login.html">Iniciar sesión</a>
+            <a href="Register.html" class="btn-nav-action">Registrarse</a>
+        </nav>
+         <!-- Botón hamburguesa (solo visible en móvil) -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <span class="menu-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </span>
+            <span class="close-icon" style="display:none;">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </span>
+        </button>
+    </div>
+</header>
+
+<!-- ==========================================================================
+     CONTENIDO PRINCIPAL
+     ========================================================================== -->
+<main class="page-main">
+
+    <section class="hero">
+        <span class="pill">
+            <span class="pill-dot"></span>
+            Participación estudiantil
+        </span>
+        <h1>Comentarios y <span>sugerencias</span></h1>
+        <p>¿Tienes una idea, duda o algo que mejorar sobre la plataforma? Cuéntanos aquí.</p>
+    </section>
+
+    <!-- Layout en 2 columnas: formulario + lista -->
+    <div class="layout">
+
+        <!-- ===================== COLUMNA IZQUIERDA: FORMULARIO ===================== -->
+        <section class="card-clean form-card">
+            <div class="card-header">
+                <span class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </span>
+                <h2>Deja tu comentario</h2>
+            </div>
+
+            <form id="form-comentario" class="auth-form">
+
+                <!-- Nombre -->
+                <div class="form-group">
+                    <label for="nombre">Nombre <span class="opcional">(opcional)</span></label>
+                    <div class="input-wrap">
+                        <span class="input-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </span>
+                        <input type="text" id="nombre" name="nombre" placeholder="Puedes dejarlo en blanco si prefieres">
+                    </div>
+                </div>
+
+                <!-- Comentario -->
+                <div class="form-group">
+                    <label for="comentario">Comentario <span class="required">*</span></label>
+                    <div class="input-wrap textarea-wrap">
+                        <span class="input-icon icon-top" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="17" y1="10" x2="3" y2="10"/>
+                                <line x1="21" y1="6" x2="3" y2="6"/>
+                                <line x1="21" y1="14" x2="3" y2="14"/>
+                                <line x1="17" y1="18" x2="3" y2="18"/>
+                            </svg>
+                        </span>
+                        <textarea id="comentario" name="comentario" rows="4" required
+                            placeholder="Escribe tu comentario o sugerencia aquí..."></textarea>
+                    </div>
+                    <span class="field-hint">Máximo 400 caracteres. Sé respetuoso y claro.</span>
+                </div>
+
+                <!-- Botón -->
+                <button type="submit" class="btn-submit">
+                    <span>Enviar comentario</span>
+                    <span class="btn-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </span>
+                </button>
+
+                <!-- Mensaje de éxito -->
+                <div id="mensaje-exito" class="alert-success hidden">
+                    <span class="alert-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <strong>¡Gracias por tu comentario!</strong>
+                        Por ahora este envío es solo visual; se conectará a la base de datos más adelante.
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- ===================== COLUMNA DERECHA: LISTA DE COMENTARIOS ===================== -->
+        <section class="card-clean list-card">
+            <div class="card-header">
+                <span class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="8" y1="6" x2="21" y2="6"/>
+                        <line x1="8" y1="12" x2="21" y2="12"/>
+                        <line x1="8" y1="18" x2="21" y2="18"/>
+                        <line x1="3" y1="6" x2="3.01" y2="6"/>
+                        <line x1="3" y1="12" x2="3.01" y2="12"/>
+                        <line x1="3" y1="18" x2="3.01" y2="18"/>
+                    </svg>
+                </span>
+                <h2>Comentarios recientes</h2>
+            </div>
+
+            <ul class="comments-list" id="comments-list">
+
+                <li class="comment-item">
+                    <div class="comment-avatar" aria-hidden="true">A</div>
+                    <div class="comment-body">
+                        <div class="comment-meta">
+                            <span class="comment-name">Ana R.</span>
+                            <span class="comment-time">Hace 2 días</span>
+                        </div>
+                        <p class="comment-text">Sería útil poder filtrar los avistamientos por zona del colegio. Así el equipo de aseo prioriza mejor.</p>
+                    </div>
+                </li>
+
+                <li class="comment-item">
+                    <div class="comment-avatar" aria-hidden="true">J</div>
+                    <div class="comment-body">
+                        <div class="comment-meta">
+                            <span class="comment-name">Juan P.</span>
+                            <span class="comment-time">Hace 5 días</span>
+                        </div>
+                        <p class="comment-text">Me gustó el formulario, es sencillo. ¿Podrían añadir un campo para indicar si el avistamiento fue cerca del comedor?</p>
+                    </div>
+                </li>
+
+                <li class="comment-item">
+                    <div class="comment-avatar" aria-hidden="true">?</div>
+                    <div class="comment-body">
+                        <div class="comment-meta">
+                            <span class="comment-name">Anónimo</span>
+                            <span class="comment-time">Hace 1 semana</span>
+                        </div>
+                        <p class="comment-text">Excelente iniciativa del proyecto de Media Técnica. Apoyaré con reportes desde mi bloque.</p>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+
+    </div>
+
+</main>
+
+<!-- ==========================================================================
+     PIE DE PÁGINA
+     ========================================================================== -->
+<footer>
+    <div class="footer-inner">
+        <span><strong>OnView</strong> • Proyecto Media Técnica en Desarrollo de Software — I.E. San Antonio de Prado</span>
+        <span>Medellín, Antioquia</span>
+    </div>
+</footer>
+
+<!-- ==========================================================================
+     JAVASCRIPT: envío visual + agregar comentario a la lista
+     ========================================================================== -->
+<script>
+/* ==========================================================================
+   1. FORMULARIO DE AVISTAMIENTO
+   ========================================================================== */
+const formulario = document.querySelector("#form-avistamiento");
+const mensajeExito = document.querySelector("#mensaje-exito");
+const inputFecha = document.querySelector("#fecha");
+const inputHora = document.querySelector("#hora");
+
+if (inputFecha && !inputFecha.value) {
+    inputFecha.value = new Date().toISOString().split('T')[0];
+}
+
+if (inputHora && !inputHora.value) {
+    const ahora = new Date();
+    const horas = String(ahora.getHours()).padStart(2, '0');
+    const minutos = String(ahora.getMinutes()).padStart(2, '0');
+    inputHora.value = `${horas}:${minutos}`;
+}
+
+if (formulario) {
+    formulario.addEventListener("submit", function(evento) {
+        evento.preventDefault();
+        mensajeExito.classList.remove("hidden");
+        mensajeExito.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+        setTimeout(() => {
+            formulario.reset();
+            if (inputFecha) inputFecha.value = new Date().toISOString().split('T')[0];
+        }, 1200);
+    });
+}
+
+/* ==========================================================================
+   2. MENÚ HAMBURGUESA
+   ========================================================================== */
+const menuToggle = document.querySelector("#menu-toggle");
+const headerNav  = document.querySelector("header nav");
+const menuIcon   = menuToggle ? menuToggle.querySelector(".menu-icon") : null;
+const closeIcon  = menuToggle ? menuToggle.querySelector(".close-icon") : null;
+
+if (menuToggle && headerNav) {
+    menuToggle.addEventListener("click", function (e) {
+        e.stopPropagation();
+        const isOpen = headerNav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        if (menuIcon && closeIcon) {
+            menuIcon.style.display  = isOpen ? "none" : "inline-flex";
+            closeIcon.style.display = isOpen ? "inline-flex" : "none";
+        }
+    });
+
+    headerNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            headerNav.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            if (menuIcon && closeIcon) {
+                menuIcon.style.display  = "inline-flex";
+                closeIcon.style.display = "none";
+            }
+        });
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!headerNav.contains(e.target) && !menuToggle.contains(e.target)) {
+            headerNav.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            if (menuIcon && closeIcon) {
+                menuIcon.style.display  = "inline-flex";
+                closeIcon.style.display = "none";
+            }
+        }
+    });
+}
+</script>
+
+</body>
+</html>
