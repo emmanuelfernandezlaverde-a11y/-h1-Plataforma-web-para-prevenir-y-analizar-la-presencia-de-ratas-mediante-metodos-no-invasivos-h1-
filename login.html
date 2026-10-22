@@ -7,11 +7,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="public/a_clean_vector_style_graphic_logo_illustration_on.png" type="image/x-icon">
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body><!-- Marca flotante (clicable para volver al inicio) -->
 <a href="index.html" class="brand-floating">
-    <div class="logo-badge">◉</div>
+    <div class="logo-badge">
+        <img src="public/a_clean_vector_style_graphic_logo_illustration_on.png" alt="Logo de OnView" width="55" height="55">
+    </div>
     <div class="brand-text">
         <span class="brand-title">OnView</span>
         <span class="brand-sub">I.E. San Antonio de Prado</span>
@@ -29,7 +32,7 @@
 
     <section class="hero">
         <span class="pill">
-            <span class="pill-dot"></span>
+            <span><img src="public/a_clean_vector_style_graphic_logo_illustration_on.png" alt="" width="20" height="20"></span>
             Acceso al sistema
         </span>
         <h1>Iniciar <span>sesión</span></h1>
@@ -51,7 +54,7 @@
                             <circle cx="12" cy="7" r="4"/>
                         </svg>
                     </span>
-                    <input type="text" id="usuario" name="usuario" placeholder="Ej: juan.perez" required autocomplete="username">
+                    <input type="text" id="usuario" name="usuario"   autocomplete="username">
                 </div>
             </div>
 
@@ -66,7 +69,7 @@
                             <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                         </svg>
                     </span>
-                    <input type="password" id="password" name="password" placeholder="Tu contraseña" required autocomplete="current-password">
+                    <input type="password" id="password" name="password" required autocomplete="current-password">
 
                     <button type="button" id="toggle-password" class="btn-toggle-pass" aria-label="Mostrar u ocultar contraseña">
                         <!-- Icono SVG: ojo abierto -->
@@ -82,15 +85,6 @@
                         </svg>
                     </button>
                 </div>
-            </div>
-
-            <!-- Opciones extra -->
-            <div class="form-extra">
-                <label class="remember">
-                    <input type="checkbox" name="recordar">
-                    <span>Recordarme</span>
-                </label>
-                <a href="#" class="link-forgot">¿Olvidaste tu contraseña?</a>
             </div>
 
             <!-- Botón principal -->
